@@ -1,30 +1,26 @@
-// Vamnos fazer requisição de dados
+fetch('pessoas.json')
+    .then(respota => respota.json()) 
+    .then(json => carregaElementos(json))
 
-document.addEventListener('click', e => {
-    const elemento = e.target
-    const tag = elemento.tagName.toLowerCase()
+function carregaElementos(json) {
+    let table = document.createElement('table')
+    for(let pessoa of json) {
+        const tr = document.createElement('tr')
+        let td1 = document.createElement('td')
+        td1.innerHTML = pessoa.nome
+        tr.appendChild(td1)
+        
+        let td2 = document.createElement('td')
+        td2.innerHTML = pessoa.idade
+        tr.appendChild(td2)
+        
+        let td3 = document.createElement('td')
+        td3.innerHTML = pessoa.salario
+        tr.appendChild(td3)
 
-    if (tag === 'a') {
-        e.preventDefault()
-        carregaPagina(elemento)
+        table.appendChild(tr)
     }
-})
 
-async function carregaPagina(elemento) {
-    try {
-        const href = elemento.getAttribute('href')
-        const response = await fetch(href)
-
-        if (response.status !== 200) throw new Error('ERRO ' + response.status)
-
-        const html = await response.text()
-        carregaResultado(html)
-    } catch (e) {
-        console.warn(e)
-    }
-}
-
-function carregaResultado(response) {
     const resultado = document.querySelector('.resultado')
-    resultado.innerHTML = response
+    resultado.appendChild(table)
 }
