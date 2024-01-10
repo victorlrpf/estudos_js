@@ -1,0 +1,27 @@
+mixin html-structure
+    doctype html
+    html(lang="pt-br")
+        head
+            meta(charset="UTF-8")
+            meta(name="viewport", content="width=device-width, initial-scale=1.0")
+            script(src="./assets/js/main.js") 
+            title Document
+        body
+
+mixin sect-co
+    section(class='container')
+
+mixin grade 
+    table(class='calculadora')
+
+mixin display 
+    tr 
+        td(colspan='4')
+        input(class='display')
+
+mixin tr-td
+    tr 
+        td
+           
+mixin botao(classe)
+    button.botao= classe

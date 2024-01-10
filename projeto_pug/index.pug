@@ -1,0 +1,53 @@
+include /projeto_pug/tamplete.pug
+
++html-structure 
+    +secto-co 
+        h1 calculadora 
+        +grade 
+            display
+        +tr-td
+            tr
+                td 
+                    button(class='btn btn-clear') C
+                td 
+                    button(class='btn btn-num') (
+                td 
+                    button(class='btn btn-num') )
+                td 
+                    button(class='btn btn-num') /
+            tr
+                td 
+                    button(class='btn btn-num') 7
+                td 
+                    button(class='btn btn-num') 8
+                td 
+                    button(class='btn btn-num') 9
+                td 
+                    button(class='btn btn-num') *
+            tr
+                td 
+                    button(class='btn btn-num') 4
+                td 
+                    button(class='btn btn-num') 5
+                td 
+                    button(class='btn btn-num') 6
+                td 
+                    button(class='btn btn-num') +
+            tr
+                td 
+                    button(class='btn btn-num') 1
+                td 
+                    button(class='btn btn-num') 2
+                td 
+                    button(class='btn btn-num') 3
+                td 
+                    button(class='btn btn-num') -
+            tr
+                td 
+                    button(class='btn btn-num') .
+                td 
+                    button(class='btn btn-num') 0
+                td 
+                    button(class='btn btn-del') &laquo;
+                td 
+                    button(class='btn btn-eq') =
