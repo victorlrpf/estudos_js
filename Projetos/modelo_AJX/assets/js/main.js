@@ -26,16 +26,20 @@ document.addEventListener('click', e => {
     }
 })
 
-function carregaPagina(elemento) {
+async function carregaPagina(elemento) {
     const href = elemento.getAttribute('href')
+
     const objetoConfig = {
         method: 'GET',
         url: href,
     }
 
-    request(objetoConfig).then(response => {
-        carregaPagina(response)
-    })
+    try{
+        const response = await request(objetoConfig)
+        carregaResultado(response)
+    } catch(e) {
+        console.log(e)
+    }
 }
 
 function carregaResultado(response) {
