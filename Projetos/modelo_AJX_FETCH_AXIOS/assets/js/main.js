@@ -22,16 +22,6 @@ async function carregaPagina(elemento) {
     } catch (e) {
         console.warn(e)
     }
-
-    /* Aqui eu apliquei o async e o awit, então já não preciso mais do  codigo a baixo
-    fetch(href)
-    .then(response => {
-        if(response !== 200) throw new Error('ERRO ' + response.status)
-        return response.text()
-    })
-    .then(html =>  carregaResultado(html) )
-    .catch(e => console.warn(e))
-    */
 }
 
 function carregaResultado(response) {
