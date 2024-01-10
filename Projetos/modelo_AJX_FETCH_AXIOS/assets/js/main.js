@@ -15,7 +15,7 @@ async function carregaPagina(elemento) {
         const href = elemento.getAttribute('href')
         const response = await fetch(href)
 
-        if (response.status !== 200) throw new Error('ERRO 404')
+        if (response.status !== 200) throw new Error('ERRO ' + response.status)
 
         const html = await response.text()
         carregaResultado(html)
