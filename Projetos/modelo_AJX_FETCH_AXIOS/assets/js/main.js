@@ -1,6 +1,10 @@
-fetch('pessoas.json')
-    .then(respota => respota.json()) 
-    .then(json => carregaElementos(json))
+// fetch('pessoas.json')
+//     .then(respota => respota.json()) 
+//     .then(json => carregaElementos(json))
+// Vamos usar o AXIOS agora
+
+axios('pessoas.json')
+    .then(respota => carregaElementos(respota.data)) 
 
 function carregaElementos(json) {
     let table = document.createElement('table')
