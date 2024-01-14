@@ -18,9 +18,17 @@ function carregaElementos(json) {
         td2.innerHTML = pessoa.idade
         tr.appendChild(td2)
         
-        let td3 = document.createElement('td')
-        td3.innerHTML = pessoa.salario
-        tr.appendChild(td3)
+        // let td3 = document.createElement('td')
+        // td3.innerHTML = pessoa.salario
+        // tr.appendChild(td3)
+        
+        let td4 = document.createElement('td')
+        td4.innerHTML = pessoa.estado
+        tr.appendChild(td4)
+
+        let td5 = document.createElement('td')
+        td5.innerHTML = pessoa.email
+        tr.appendChild(td5)
 
         table.appendChild(tr)
     }
