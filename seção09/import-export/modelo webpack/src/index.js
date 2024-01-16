@@ -1,5 +1,5 @@
 import { nome as nome2, sobrenome, idade, soma, Pessoa} from './modulo1'
-
+import './assets/css/style.css'
 const nome = 'Joao'
 
 console.log(nome2, sobrenome, idade)
