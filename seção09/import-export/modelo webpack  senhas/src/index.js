@@ -1,9 +1,4 @@
-import { nome as nome2, sobrenome, idade, soma, Pessoa} from './modulo1'
 import './assets/css/style.css'
-const nome = 'Joao'
+import formGeraSenha from './modules/formGeraSenha'
 
-console.log(nome2, sobrenome, idade)
-console.log(soma(2,3))
-
-const p1 = new Pessoa('Luiz', 'Lins')
-console.log(p1)
+formGeraSenha()

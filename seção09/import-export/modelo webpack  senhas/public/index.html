@@ -11,13 +11,16 @@
 <body>
 
   <section class="container">
-    <h1>Lorem ipsum dolor sit amet</h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-      Repellendus nisi explicabo saepe voluptatibus consequuntur et corporis
-      maxime quos, doloribus vitae voluptatum quisquam necessitatibus
-      pariatur veritatis exercitationem beatae officiis suscipit Ea!
-    </p>
+    <h1>Gerador de Senhas</h1>
+    <div class="senha-gerada">Selecione as opções</div>
+    <span class="barra"></span>
+    
+    <label>Quantidade de Caracteres</label><input type="number" min="1" max="50" class="quantidade-caracteres" value="8"><br>
+    <label>Adicionar letras Minusculas</label><input type="checkbox" class="chk-maiusculas"><br>
+    <label>Adicionar letras Maiusculas</label><input type="checkbox" class="chk-minusculas"><br>
+    <label>Adicionar Numeros</label><input type="checkbox" class="chk-numeros"><br>
+    <label>Adicionar Caracterres Especiais</label><input type="checkbox" class="chk-especiais"><br>
+    <button class="gerar-senha">Gerar senha</button>
   </section>
 
   <script src="./assets/js/bundle.js"></script>
