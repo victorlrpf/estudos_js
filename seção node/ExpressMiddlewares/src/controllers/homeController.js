@@ -4,4 +4,6 @@ exports.paginaInicial = (req, res) => {
 
 exports.TrataPost = (req, res) => {
     console.log(req.body)
+    res.send(req.body)
+    return
 }
