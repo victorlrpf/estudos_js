@@ -1,19 +1,13 @@
 const HomeModel = require('../models/HomeModel')
 
-// HomeModel.create({
-//     titulo: 'Um titulo de teste', 
-//     subtitulo: 'Descrição de teste'
-// })
-//     .then(dados => console.log(dados))
-//     .catch(e => console.log(e))
-
-HomeModel.find()
-    .then(dados => console.log(dados))
-    .catch(e => console.log(e))
-
-
 exports.paginaInicial = (req, res) => {
-    res.render('index.ejs')
+    // req.session.usuario = {
+    //     nome: 'Victor',
+    //     idade: 25,
+    //     logado: true
+    // }
+    // s
+    res.render('index.pug')
 }
 
 exports.TrataPost = (req, res) => {

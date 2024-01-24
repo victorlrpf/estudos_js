@@ -11,20 +11,43 @@ mongoose.connect(process.env.connectionString)
     })
     .catch(e => console.log(e))
 
+const session = require('express-session')
+const MongoStore = require('connect-mongo')
+const flash = require('connect-flash')
 const routes = require('./routes')
 const path = require('path')
-const { middlewareGlobal, middlewareSec } = require('./src/middlewares/middlewares')
+const helmet = require('helmet')
+const csrf = require('csurf')
+const { middlewareGlobal, checkCsrfError, csrfMiddleware } = require('./src/middlewares/middlewares')
 
+app.use(helmet())
 app.use(express.urlencoded({extended: true}))
-
 app.use(express.static(path.resolve(__dirname, 'public')))
+
+const sessionOptions = session({
+    secret: 'OLA',
+    store: MongoStore.create({ mongoUrl: process.env.connectionString }),
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        maxAge: 1000 * 60 * 60 * 24 * 7,
+        httpOnly: true
+    }
+})
+
+app.use(sessionOptions)
+app.use(flash())
+
 
 app.set('views', path.resolve(__dirname, 'src', 'views'))
 app.set('view engine', 'ejs')
-// app.set('view engine', 'pug')
+app.set('view engine', 'pug')
 
+app.use(csrf())
+//Meu proprio middleware
 app.use(middlewareGlobal)
-app.use(middlewareSec)
+app.use(checkCsrfError)
+app.use(csrfMiddleware)
 app.use(routes)
 
 // Quando estiver pronto a função vai fazer para começar a escutar
