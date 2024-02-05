@@ -1,13 +1,7 @@
 const HomeModel = require('../models/HomeModel')
 
 exports.paginaInicial = (req, res) => {
-    // req.session.usuario = {
-    //     nome: 'Victor',
-    //     idade: 25,
-    //     logado: true
-    // }
-    // s
-    res.render('index.pug')
+    res.render('index.ejs')
 }
 
 exports.TrataPost = (req, res) => {
