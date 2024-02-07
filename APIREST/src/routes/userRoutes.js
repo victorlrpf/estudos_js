@@ -1,13 +1,17 @@
 import { Router } from 'express';
 import UserController from '../controllers/UserController';
+import loginRequired from '../middlewares/loginRequired';
 
 const router = new Router();
 
-router.post('/', UserController.store);
-router.get('/', UserController.index);
+// Esse não deveria existir se fosse um em prod mesmo
+router.get('/', loginRequired, UserController.index);
 router.get('/:id', UserController.show);
-router.put('/:id', UserController.update);
-router.delete('/:id', UserController.delete);
+
+// Esses são realistas  para o projeto final
+router.post('/', UserController.store);
+router.put('/', loginRequired, UserController.update);
+router.delete('/', loginRequired, UserController.delete);
 
 export default router;
 
