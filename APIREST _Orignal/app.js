@@ -5,6 +5,7 @@ dotenv.config();
 import './src/database';
 
 import express from 'express';
+
 import homeRoutes from './src/routes/homeRoutes';
 import userRoutes from './src/routes/userRoutes';
 import tokenRoutes from './src/routes/tokenRoutes';
