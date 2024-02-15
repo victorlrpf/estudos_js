@@ -9,7 +9,7 @@ router.get('/', loginRequired, UserController.index);
 router.get('/:id', UserController.show);
 
 // Esses são realistas  para o projeto final
-router.post('/', UserController.store);
+router.post('/', loginRequired, UserController.store);
 router.put('/', loginRequired, UserController.update);
 router.delete('/', loginRequired, UserController.delete);
 
